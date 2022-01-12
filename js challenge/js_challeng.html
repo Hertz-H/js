@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark ">
+    <button id="btn"> change mode </button>
+    <div class="form_container">
+        <form >
+           
+                
+                <label>Your Name</label><input id="name" type="text" value="" name="sender_name" id=""> <label>Phone Number</label><input type="tel"class="full_width" name="phone_number" id="">
+                <label >age</label> <input  id="age" type="number" value="" name="age" >
+                <label >Email</label> <input id="email" type="text"  value="" name="email" id="">
+                <label >url</label> <input  id="url" type="text"value="" name="subject" id="">
+                <label >Your message</label><textarea  name="" value="" id="message" cols="20" rows="6"></textarea><br>
+                <button id="submit" type="submit">send Message</button>
+             </form>
+   </div>
+</body>
+<script>
+    var body=document.querySelector(".dark");
+    var btn=document.getElementById("btn");
+    console.log(btn);
+    console.log(body);
+    btn.onclick=function(){
+    body.classList.toggle("dark");
+
+    };
+    var submit=document.getElementById("submit"); 
+    var name1=document.getElementById("name"); 
+    var Email1=document.getElementById("Email");
+    var message1=document.getElementById("message"); 
+    var url1=document.getElementById("url"); 
+    var age=document.getElementById("age"); 
+    function validateEmail(elementValue){      
+   var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+   return emailPattern.test(elementValue); 
+ }
+ var result=validateEmail(Email1.value);
+console.log(result);
+
+ function name(elementValue){      
+   var nPattern = /^[a-zA-Z]{3,9}$/;
+   return nPattern.test(elementValue); 
+ }
+ var name=name(name1.value);
+ console.log(" name "+name);
+
+
+ function message(elementValue){      
+   var message = /^[a-zA-Z]{21,}$/;
+   return message.test(elementValue); 
+ }
+ var message=message(message1.value);
+ console.log(" na "+message);
+ 
+ function url(elementValue){      
+   var url = /^['http://']+[a-zA-Z]+\.[a-zA-Z]+\.[a-zA-Z]{2,4}$/;
+   return url.test(elementValue); 
+ }
+ var url=url(url1.value);
+console.log("url"+url);
+
+     if(age.value<19){
+        console.log("age ypunger than 19");
+     }
+ 
+
+
+   
+
+
+var message_alert="";
+    var url1=document.getElementById("url"); 
+    submit.onclick=function(){
+        if(url==false){
+            url1.style.backgroundColor="red";
+        }
+        if(name ==false){
+            name1.style.backgroundColor="red";
+           
+        }
+        if(result ==false){
+            Email1.style.backgroundColor="red";
+        }
+        if(message==false){
+            message1.style.backgroundColor="red";
+        }
+    
+
+    };
+
+  
+
+
+
+//  function pass(elementValue){      
+//    var nPattern = /^[a-zA-Z]{3,9}$/;
+//    return nPattern.test(elementValue); 
+//  }
+//  var pass=pass("zxcvbn");
+//  console.log(" na "+pass);
+  
+
+//  function phone(elementValue){      
+// var phone = /^[7]{3}[/d]{6}$/
+//    return phone.test(elementValue); 
+//  }
+//  var phone=phone("777");
+//  console.log(" phone "+phone);
+
+ 
+
+</script>
+</html>
